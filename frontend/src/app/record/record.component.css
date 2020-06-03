@@ -1,0 +1,9 @@
+.form-tile>::ng-deep .mat-figure{
+    align-items: unset;
+    justify-content: unset;
+    width: 100px;
+}
+
+.tile-list>::ng-deep .mat-grid-list{
+    width: 100px;
+}

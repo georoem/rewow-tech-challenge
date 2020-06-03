@@ -1,0 +1,27 @@
+version: "3.1"
+ 
+services:
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on: 
+      - backend
+  backend:
+    build: ./backend/
+    restart: always
+    ports: 
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    env_file:
+      - database.env
+    container_name: database
+    volumes:
+      - ./data:/database
+    ports:
+      - "5432:5432"
+    restart: always

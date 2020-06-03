@@ -1,0 +1,27 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)] = "owner.name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Apellido</mat-label>
+    <input matInput [(ngModel)] = "owner.lastName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Contacto Telefónico</mat-label>
+    <input matInput [(ngModel)] = "owner.contact" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Dirección</mat-label>
+    <input matInput [(ngModel)] = "owner.address" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)] = "owner.email" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cerrar</button>
+  <button mat-button (click)="createOwner()" cdkFocusInitial>Crear </button>
+</div>

@@ -1,0 +1,35 @@
+<div class="form">
+    <mat-card class="mat-elevation-z0">
+        <mat-grid-list cols="1" rowHeight="20px">
+            <mat-grid-tile class="form-tile">
+                Nombre de la mascota
+            </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                {{pet.name}}
+            </mat-grid-tile>
+        </mat-grid-list>
+        <button mat-fab disabled class="form-button-icon">
+            <mat-icon mat-list-icon svgIcon="photography"></mat-icon>
+        </button>
+        <mat-grid-list cols="3" rowHeight="20px">
+            <mat-grid-tile class="form-tile">
+                Raza
+            </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                Tipo
+            </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                Edad
+           </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                {{pet.breed}}
+            </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                {{pet.type}}
+            </mat-grid-tile>
+            <mat-grid-tile class="form-tile">
+                {{pet.age}} Años
+           </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>

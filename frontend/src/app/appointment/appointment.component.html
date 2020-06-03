@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-header *ngIf="mode=='RECORD'">
+        <h1>HISTORIAL</h1>
+    </mat-card-header>
+    <button *ngIf="mode!='RECORD'" mat-raised-button (click)="openDialog()">Nueva cita</button>
+    <mat-selection-list [multiple]="false" *ngFor="let appointment of appointments">
+        <mat-list-option *ngFor="let service of appointment.services">
+            <mat-icon mat-list-icon svgIcon="calendar"></mat-icon>
+            <div mat-line>{{service.name}}</div>
+            <div mat-line>{{appointment.date}}</div>
+            <div>9:00 am</div>
+        </mat-list-option>
+    </mat-selection-list>
+</mat-card>
