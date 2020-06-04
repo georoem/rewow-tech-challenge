@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DashboardService } from './dashboard.service';
 import { OwnerService } from './owner.service';
 import { PetService } from '../pet/pet.service';
+import { Pet } from '../model/pet.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   owner:any;
   pets:any[];
-  currentPet:any;
+  currentPet:Pet =new Pet();
 
   constructor(public ownerService:OwnerService,
     public petService:PetService,

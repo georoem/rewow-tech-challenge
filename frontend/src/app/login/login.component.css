@@ -1,8 +1,9 @@
 html, body { height: 100%; }
-body {
+
+::ng-deep body {
     margin: 0; 
-    background:#65ba69;
-    background: linear-gradient(-10deg, white 50%, #65ba69 50%);
+    background-color: #65ba69;
+    background: linear-gradient(-10deg, white 50%, #65ba69 50%) !important;
 }
 
 .mat-icon{

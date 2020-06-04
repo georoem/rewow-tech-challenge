@@ -1,14 +1,16 @@
-<mat-card>
-    <mat-card-header *ngIf="mode=='RECORD'">
+<div class="panel-container">
+<mat-expansion-panel class="panel" [expanded]="true" hideToggle>
+    <mat-expansion-panel-header *ngIf="mode=='RECORD'">
         <h1>HISTORIAL</h1>
-    </mat-card-header>
+    </mat-expansion-panel-header>
     <button *ngIf="mode!='RECORD'" mat-raised-button (click)="openDialog()">Nueva cita</button>
     <mat-selection-list [multiple]="false" *ngFor="let appointment of appointments">
         <mat-list-option *ngFor="let service of appointment.services">
             <mat-icon mat-list-icon svgIcon="calendar"></mat-icon>
             <div mat-line>{{service.name}}</div>
-            <div mat-line>{{appointment.date}}</div>
-            <div>9:00 am</div>
+            <div mat-line>{{ appointment.date | date:'EEEE dd LLLL' }}</div>
+            <div mat-line>{{ appointment.date | date:'shortTime' }}</div>
         </mat-list-option>
     </mat-selection-list>
-</mat-card>
+</mat-expansion-panel>
+</div>

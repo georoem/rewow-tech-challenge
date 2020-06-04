@@ -6,8 +6,7 @@ import { Pet } from '../model/pet.model';
 @Component({
   selector: 'app-pet',
   templateUrl: './pet.component.html',
-  styleUrls: ['./pet.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./pet.component.css']
 })
 export class PetComponent implements OnInit {
 

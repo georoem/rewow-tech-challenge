@@ -21,6 +21,7 @@ const routes: Routes = [
           { path: 'store', component: StoreComponent }
       ]
   },
+  { path: '**',  redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

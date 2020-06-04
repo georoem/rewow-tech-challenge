@@ -8,7 +8,7 @@ export class Pet {
       id:number;
     };
   
-    constructor(ownerId: number) {
+    constructor(ownerId?: number) {
       this.owner = {id:ownerId};
     }
   }

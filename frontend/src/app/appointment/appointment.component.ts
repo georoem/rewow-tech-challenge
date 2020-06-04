@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input, ViewEncapsulation } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PetService } from '../pet/pet.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppointmentService } from './appointment.service';
 import { Pet } from '../model/pet.model';
+import { Appointment } from '../model/appointment.model';
 
 @Component({
   selector: 'app-appointment',
@@ -41,7 +42,7 @@ export class AppointmentComponent implements OnInit {
   }
 
   async createAppointment(data) {
-    let appointment = {
+    let appointment:Appointment = {
       pet: this.pet,
       services: data.services,
       date:data.date
@@ -52,7 +53,7 @@ export class AppointmentComponent implements OnInit {
   }
 
   async updateAppointments() {
-    this.appointments = <any[]>await this.petService.getApointmentsByPetId(this.pet.id).toPromise();
+    this.appointments = <Appointment[]>await this.petService.getApointmentsByPetId(this.pet.id).toPromise();
   }
 
 }
@@ -65,7 +66,7 @@ export class AppointmentDialog {
 
   services:any[] = [
     {
-      id:1,
+      id:5,
       name: "Corte de pelo",
       checked: false
     }, {
@@ -73,16 +74,16 @@ export class AppointmentDialog {
       name: "Vacunación",
       checked: false
     }, {
-      id:3,
+      id:4,
       name: "Baño",
       checked: false
     }, {
-      id:4,
+      id:3,
       name: "Desparasitación",
       checked: false
     }, {
       id:5,
-      name: "Consulta",
+      name: "Cita Médica",
       checked: false
     }
   ];

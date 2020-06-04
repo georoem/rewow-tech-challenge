@@ -1,11 +1,5 @@
-<mat-grid-list class="tile-list" cols="2">
-    <mat-grid-tile class="form-tile">
-        <app-pet-profile [pet] = "pet"></app-pet-profile>
-    </mat-grid-tile>
-    <mat-grid-tile class="form-tile">
-        <app-appointment [mode]="mode"></app-appointment>
-    </mat-grid-tile>
-</mat-grid-list>
-   
-   
+<div class="panel-container">
     
+    <app-pet-profile class="panel-body"></app-pet-profile>
+    <app-appointment [mode]="mode"></app-appointment>
+  </div>    
